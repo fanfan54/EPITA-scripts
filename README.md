@@ -1,2 +1,2 @@
 # EPITA-scripts
-Some scripts useful for projects/TPs at EPITA.
+Some useful scripts for projects/TPs at EPITA.
