@@ -7,6 +7,8 @@
 # login=`whoami`
 login="francois.lefevre"
 
+projects_folder="/home/francois.lefevre/afs/S2/prog_tp"
+
 while [ -z $correct ] || [ $correct != "y" ]
     do
 
@@ -27,8 +29,7 @@ while [ -z $correct ] || [ $correct != "y" ]
     read -p "Input the LoWeRcase TP folder name (given in the title of the ACDC's subject and in the PDF's name, like tpcsx): " tp_folder
 
     echo ""
-    cd ../$tp_folder
-    workdir_parent=`pwd`
+    cd $projects_folder/$tp_folder
     echo "Now running in the folder `pwd`, which contains:"
     ls
     echo "And its workdir contains:"
@@ -105,7 +106,7 @@ echo "Zipping...                          /////------"
 cd /tmp/mks.tmp
 zip -r /tmp/rendu-$tp_id-$login.zip *
 
-cd $workdir_parent
+cd $projects_folder/$tp_folder
 cp /tmp/rendu-$tp_id-$login.zip rendu-$tp_id-$login.zip
 
 if [ "$keep" = "y" ]; then
