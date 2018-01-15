@@ -10,7 +10,7 @@ github_username="fanfan54"
 
 templates_folder="/home/francois.lefevre/afs/templates"
 current_template="tpcs"
-projects_folder="/home/francois.lefevre/afs/S2/prog_tp"
+projects_folder="../../"
 downloads_folder="/home/francois.lefevre/Downloads"
 
 while [ -z $correct ] || [ $correct != "y" ]
@@ -63,13 +63,13 @@ cd $templates_folder/$current_template
 git pull
 
 echo "Copying & adapting the template...  ///----"
-cp .gitignore $projects_folder/$tp_folder/.gitignore
+cp .gitignore $projects_root/$tp_folder/.gitignore
 rm -rf /tmp/wasgit
 mv .git /tmp/wasgit
-cp -rf * $projects_folder/$tp_folder/
+cp -rf * $projects_root/$tp_folder/
 mv /tmp/wasgit .git
 
-cd $projects_folder/$tp_folder/
+cd $projects_root/$tp_folder/
 echo "# EPITA-${semester^^}-TP-$tp_folder" > README.md
 
 echo "Committing to git...                ////---"
@@ -88,8 +88,6 @@ if [ "$subject_lang" != "no" ]; then
     
     echo "=> Found a subject PDF, adding it to the project..."
     cp $downloads_folder/*.pdf subject_$subject_lang.pdf
-    echo "=> Deleting the pdf from Downloads..."
-    rm $downloads_folder/*.pdf
     echo "=> Committing to git..."
     git add subject_$subject_lang.pdf
     git commit -m "(auto) newTP: Added subject's PDF for language $subject_lang"
