@@ -10,7 +10,7 @@ github_username="fanfan54"
 
 templates_folder="/home/francois.lefevre/afs/templates"
 current_template="tpcs"
-projects_folder="../../"
+projects_folder="../.."
 downloads_folder="/home/francois.lefevre/Downloads"
 
 while [ -z $correct ] || [ $correct != "y" ]
