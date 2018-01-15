@@ -88,6 +88,8 @@ if [ "$subject_lang" != "no" ]; then
     
     echo "=> Found a subject PDF, adding it to the project..."
     cp $downloads_folder/*.pdf subject_$subject_lang.pdf
+    echo "=> Deleting the pdf from Downloads..."
+    rm $downloads_folder/*.pdf
     echo "=> Committing to git..."
     git add subject_$subject_lang.pdf
     git commit -m "(auto) newTP: Added subject's PDF for language $subject_lang"
