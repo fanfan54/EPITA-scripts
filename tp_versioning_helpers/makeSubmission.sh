@@ -12,7 +12,7 @@ while [ -z $correct ] || [ $correct != "y" ]
 
     echo "**********"
     echo "Hello, $login! Let's prepare your submission."
-    echo "(makeSubmission release 4.1.1 for linux and wsl)"
+    echo "(makeSubmission release 5.0 for linux and wsl)"
     echo "GITHUB SUPPORT: Enabled"
     echo "MULTI-PROG LANGUAGE SUPPORT: Disabled"
     echo "PROG LANGUAGE SUPPORTED: C#"

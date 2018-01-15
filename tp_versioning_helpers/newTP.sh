@@ -18,7 +18,7 @@ while [ -z $correct ] || [ $correct != "y" ]
 
     echo "**********"
     echo "Hello, $login! Let's create a new TP."
-    echo "(newTP release 1.8.1 for linux and wsl)"
+    echo "(newTP release 2.0 for linux and wsl)"
     echo "GITHUB SUPPORT: Enabled"
     echo "MULTI-PROG LANGUAGE SUPPORT: Disabled"
     echo "PROG LANGUAGE SUPPORTED: C#"
@@ -63,13 +63,13 @@ cd $templates_folder/$current_template
 git pull
 
 echo "Copying & adapting the template...  ///----"
-cp .gitignore $projects_root/$tp_folder/.gitignore
+cp .gitignore $projects_folder/$tp_folder/.gitignore
 rm -rf /tmp/wasgit
 mv .git /tmp/wasgit
-cp -rf * $projects_root/$tp_folder/
+cp -rf * $projects_folder/$tp_folder/
 mv /tmp/wasgit .git
 
-cd $projects_root/$tp_folder/
+cd $projects_folder/$tp_folder/
 echo "# EPITA-${semester^^}-TP-$tp_folder" > README.md
 
 echo "Committing to git...                ////---"
