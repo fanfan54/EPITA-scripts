@@ -92,6 +92,9 @@ rm -r -- **/obj/
 # Tests for the program
 rm -r -- **/tests/
 
+# Reference files
+rm -r -- **/Reference/
+
 # macOS Finder temp files
 rm -r -- **/*.DS_Store/
 rm -r -- **/__MACOSX/
