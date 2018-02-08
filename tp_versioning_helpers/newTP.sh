@@ -1,7 +1,7 @@
 #!/bin/bash
 # Creates a new TP folder, and creates a GitHub repo for it.
 # Author: fanfan54
-# Ver. 2.0 (runs from 0_SCRIPTS)
+# Ver. 2.1 (runs from 0_SCRIPTS)
 
 # Configuration (PLEASE ADAPT YOURS TO YOUR CONFIG!)
 # login=`whoami`
@@ -18,7 +18,7 @@ while [ -z $correct ] || [ $correct != "y" ]
 
     echo "**********"
     echo "Hello, $login! Let's create a new TP."
-    echo "(newTP release 2.0 for linux and wsl)"
+    echo "(newTP release 2.1 for linux and wsl)"
     echo "GITHUB SUPPORT: Enabled"
     echo "MULTI-PROG LANGUAGE SUPPORT: Disabled"
     echo "PROG LANGUAGE SUPPORTED: C#"
@@ -30,8 +30,6 @@ while [ -z $correct ] || [ $correct != "y" ]
     echo "Downloads folder: $downloads_folder"
     echo ""
 
-    read -p "Input the LoWeRcase short TP ID (will be used in the zip file name to make it like this: rendu-xx-$login.zip): " tp_id
-    
     read -p "Input the LoWeRcase TP folder name (given in the title of the ACDC's subject and in the PDF's name, like tpcsx): " tp_folder
     
     read -p "Input the LoWeRcase target semester (S1 to S10): " semester
@@ -87,6 +85,8 @@ if [ "$subject_lang" != "no" ]; then
     done
     
     echo "=> Found a subject PDF, adding it to the project..."
+    # Quick fix for bug #3 on GitHub issues
+    sleep 5    
     cp $downloads_folder/*.pdf subject_$subject_lang.pdf
     echo "=> Deleting the pdf from Downloads..."
     rm $downloads_folder/*.pdf
