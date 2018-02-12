@@ -121,7 +121,7 @@ if [ "$use_git" = "y" ]; then
     echo "Adding files to git...              ///////----"
     git add *
     echo "Committing changes to git...        ////////---"
-    git commit -m "(auto) makeSubmission: submission \"$rev\""
+    git commit -m "(auto) makeSubmission: \"$rev\""
     echo "Pushing the submission to GitHub... /////////--"
     git push origin master
 fi
