@@ -90,9 +90,9 @@ rm -- **/*.userprefs
 rm -r -- **/bin/
 rm -r -- **/obj/
 
-# Auto-regenerated libraries and packages
-rm -r -- **/packages/
-rm -- **/packages.config
+# Auto-regenerated libraries and packages (finally we keep them)
+# rm -r -- **/packages/
+# rm -- **/packages.config
 
 # Tests for the program
 rm -r -- **/tests/
