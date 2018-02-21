@@ -18,7 +18,7 @@ while [ -z $correct ] || [ $correct != "y" ]
     echo "GITHUB SUPPORT: Enabled"
     echo "MULTI-PROG LANGUAGE SUPPORT: Disabled"
     echo "PROG LANGUAGE SUPPORTED: C#"
-    echo "DELETION LIST: Enabled (gitignore tpcs 1.6)"
+    echo "DELETION LIST: Enabled (gitignore tpcs 1.7)"
     echo ""
     echo "CONFIGURATION (edit makeSubmission.sh to modify):"
     echo "login: $login"
@@ -79,15 +79,20 @@ cd /tmp/mks.tmp/$login/
 # Enabling support for globstar in bash
 shopt -s globstar
 
-# Visual Studio and JetBrains Rider configs
+# IDE's configs
 rm -r -- **/.idea/
 rm -r -- **/.vs/
 rm -- **/*.DotSettings
 rm -- **/*.csproj.user
+rm -- **/*.userprefs
 
 # Compiled files
 rm -r -- **/bin/
 rm -r -- **/obj/
+
+# Auto-regenerated libraries and packages
+rm -r -- **/packages/
+rm -- **/packages.config
 
 # Tests for the program
 rm -r -- **/tests/
