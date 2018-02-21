@@ -77,7 +77,7 @@ git add .gitignore
 git commit -m "(auto) newTP: Initial commit, cloned from template tpcs"
 
 if [ "$subject_lang" != "no" ]; then
-    echo "Adding the TP subject PDF...      /////--"
+    echo "Adding the TP subject PDF...        /////--"
     echo "=> Waiting for the file... Download and save the subject in $downloads_folder"
         
     while [ ! -f $downloads_folder/*.pdf ]; do
