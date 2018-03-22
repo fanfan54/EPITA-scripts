@@ -80,32 +80,32 @@ cd /tmp/mks.tmp/$login/
 shopt -s globstar
 
 # IDE's configs
-rm -r -- **/.idea/
-rm -r -- **/.vs/
-rm -- **/*.DotSettings
-rm -- **/*.csproj.user
-rm -- **/*.userprefs
+rm -rf -- **/.idea/
+rm -rf -- **/.vs/
+rm -f -- **/*.DotSettings
+rm -f -- **/*.csproj.user
+rm -f -- **/*.userprefs
 
 # Compiled files
-rm -r -- **/bin/
-rm -r -- **/obj/
+rm -rf -- **/bin/
+rm -rf -- **/obj/
 
 # Auto-regenerated libraries and packages (finally we keep them)
-# rm -r -- **/packages/
-# rm -- **/packages.config
+# rm -rf -- **/packages/
+# rm -f -- **/packages.config
 
 # Tests for the program
-rm -r -- **/tests/
+rm -rf -- **/tests/
 
 # Reference files
-rm -r -- **/Reference/
+rm -rf -- **/Reference/
 
 # macOS Finder temp files
-rm -r -- **/*.DS_Store/
-rm -r -- **/__MACOSX/
+rm -rf -- **/*.DS_Store/
+rm -rf -- **/__MACOSX/
 
 # Windows Explorer temp files
-rm -- **/Thumbs.db
+rm -f -- **/Thumbs.db
 
 echo "Rewriting AUTHORS, just in case...  ////-------"
 echo "* $login" > /tmp/mks.tmp/$login/AUTHORS
