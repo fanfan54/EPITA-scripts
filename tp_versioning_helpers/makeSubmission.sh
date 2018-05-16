@@ -1,7 +1,7 @@
 #!/bin/bash
 # Copies the project in the ./workdir folder into a new submission (which follows given ACDC's rules) and pushes it to GitHub.
 # Author: fanfan54
-# Ver. 5.0 (runs from 0_SCRIPTS)
+# Ver. 5.1 (runs from 0_SCRIPTS)
 
 # Configuration (PLEASE ADAPT YOURS TO YOUR CONFIG!)
 # login=`whoami`
@@ -14,11 +14,11 @@ while [ -z $correct ] || [ $correct != "y" ]
 
     echo "**********"
     echo "Hello, $login! Let's prepare your submission."
-    echo "(makeSubmission release 5.0 for linux and wsl)"
+    echo "(makeSubmission release 5.1 for linux and wsl)"
     echo "GITHUB SUPPORT: Enabled"
     echo "MULTI-PROG LANGUAGE SUPPORT: Disabled"
     echo "PROG LANGUAGE SUPPORTED: C#"
-    echo "DELETION LIST: Enabled (gitignore tpcs 1.7)"
+    echo "DELETION LIST: Enabled (gitignore tpcs 1.7.2)"
     echo ""
     echo "CONFIGURATION (edit makeSubmission.sh to modify):"
     echo "login: $login"
@@ -83,6 +83,7 @@ shopt -s globstar
 rm -rf -- **/.idea/
 rm -rf -- **/.vs/
 rm -f -- **/*.DotSettings
+rm -f -- **/*.DotSettings.user
 rm -f -- **/*.csproj.user
 rm -f -- **/*.userprefs
 
